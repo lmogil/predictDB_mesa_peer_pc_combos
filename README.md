@@ -5,7 +5,7 @@ Instructions: how to run elastic net combos
 **all data found in /home/lauren/files_for_revisions_plosgen/en_v7
 
 1. There are 3 directories in /en_v7/prepare_data and contain the processed data ready to use 
-  -/en_v7/prepare_data/covariates
+  ..-/en_v7/prepare_data/covariates
   -/en_v7/prepare_data/expression
   -/en_v7/prepare_data/genotypes
  
@@ -13,7 +13,7 @@ Instructions: how to run elastic net combos
 
 3./en_v7/dbs will have the new db files for running models with PrediXcan
 
-4./en_v7/model_training/scripts/ has all the scripts needed to run elastic net and generate models from mesa<br />
+4./en_v7/model_training/scripts/ has all the scripts needed to run elastic net and generate models from mesa
   -There are three files needed to run combos adjust these to run models accordingly 
     1. mesa_pops2.txt
     2. mesa_peers.txt
