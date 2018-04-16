@@ -5,7 +5,7 @@ Instructions: how to run elastic net combos
 **all data found in /home/lauren/files_for_revisions_plosgen/en_v7
 
 1. There are 3 directories in /en_v7/prepare_data and contain the processed data ready to use 
-  ..-/en_v7/prepare_data/covariates
+  ..*/en_v7/prepare_data/covariates
   -/en_v7/prepare_data/expression
   -/en_v7/prepare_data/genotypes
  
