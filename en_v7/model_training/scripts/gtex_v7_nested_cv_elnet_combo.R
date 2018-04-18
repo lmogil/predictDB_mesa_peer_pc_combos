@@ -172,25 +172,25 @@ main <- function(snp_annot_file, gene_annot_file, genotype_file, expression_file
   seed <- ifelse(is.na(seed), sample(1:1000000, 1), seed)
   set.seed(seed)
   
-  # Prepare output data----
-  model_summary_file <- '/home/lauren/files_for_revisions_plosgen/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_model_summaries_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
+  # Prepare output data----###changed file path to your directory 
+  model_summary_file <- '/home/angela/plosgen_revisions/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_model_summaries_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
   model_summary_cols <- c('gene_id', 'gene_name', 'gene_type', 'alpha', 'n_snps_in_window', 'n_snps_in_model', 'lambda_min_mse',
                           'test_R2_avg', 'test_R2_sd', 'cv_R2_avg', 'cv_R2_sd', 'in_sample_R2',
                           'nested_cv_fisher_pval', 'rho_avg', 'rho_se', 'rho_zscore', 'rho_avg_squared', 'zscore_pval',
                           'cv_rho_avg', 'cv_rho_se', 'cv_rho_avg_squared', 'cv_zscore_est', 'cv_zscore_pval', 'cv_pval_est')
   write(model_summary_cols, file = model_summary_file, ncol = 24, sep = '\t')
   
-  weights_file <- '/home/lauren/files_for_revisions_plosgen/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_weights_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
+  weights_file <- '/home/angela/plosgen_revisions/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_weights_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
   weights_col <- c('gene_id', 'rsid', 'varID', 'ref', 'alt', 'beta')
   write(weights_col, file = weights_file, ncol = 6, sep = '\t')
   
-  tiss_chr_summ_f <- '/home/lauren/files_for_revisions_plosgen/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_tiss_chr_summary_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
+  tiss_chr_summ_f <- '/home/angela/plosgen_revisions/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_tiss_chr_summary_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
   tiss_chr_summ_col <- c('n_samples', 'chrom', 'cv_seed', 'n_genes')
   tiss_chr_summ <- data.frame(n_samples, chrom, seed, n_genes)
   colnames(tiss_chr_summ) <- tiss_chr_summ_col
   write.table(tiss_chr_summ, file = tiss_chr_summ_f, quote = FALSE, row.names = FALSE, sep = '\t')
   
-  covariance_file <- '/home/lauren/files_for_revisions_plosgen/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_covariances_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
+  covariance_file <- '/home/angela/plosgen_revisions/en_v7/new_output/' %&% prefix %&% '_chr' %&% chrom %&% '_covariances_' %&% peer %&% '_peer_' %&% covar %&% 'pcs.txt'
   covariance_col <- c('GENE', 'RSID1', 'RSID2', 'VALUE')
   write(covariance_col, file = covariance_file, ncol = 4, sep = ' ')
   
